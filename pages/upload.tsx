@@ -6,9 +6,9 @@ import { MdDelete } from 'react-icons/md';
 import axios from 'axios';
 
 import useAuthStore from '../store/authStore';
+import { BASE_URL } from '../utils';
 import { client } from '../utils/client';
 import { topics } from '../utils/constants';
-import { BASE_URL } from '../utils';
 
 const upload = () => {
   const [isLoading, setIsLoading] = useState(false);
