@@ -1,16 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  reactStrictMode: true,
-  swcMinify: true,
-  images: {
-    domains: [
-      'www.shareicon.net',
-      'lh3.googleusercontent.com'
-    ],
-  }
-}
+const withPWA = require("next-pwa");
 
-module.exports = nextConfig
+module.exports = withPWA({
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+  },
+});
