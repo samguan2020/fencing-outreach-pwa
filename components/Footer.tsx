@@ -15,7 +15,6 @@ const List = ({ items, mt }: { items: string[], mt: Boolean }) => (
 const Footer: NextPage = () => (
   <div className='mt-6 hidden xl:block'>
     <List items={footerList1} mt={false} />
-    <p className='text-gray-400 text-sm mt-5'>© 2023 fencingoutreach.org</p>
   </div>
 );
 

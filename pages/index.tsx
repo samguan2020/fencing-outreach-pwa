@@ -21,6 +21,7 @@ const Home = ({ videos }: IProps) => {
         )) 
       ) : (<NoResults text={`No Videos`} />
     )}
+    <p className='text-gray-400 text-md mt-5'>© 2023 fencingoutreach.org</p>
     </div> 
   );
 };

@@ -1,4 +1,4 @@
-import { GiKneeCap, GiAchillesHeel, GiFootPlaster, GiNailedFoot, GiLeg, GiBackPain, GiShoulderArmor, GiHandBandage } from 'react-icons/gi';
+import { GiKneeCap, GiAchillesHeel, GiFootPlaster, GiNailedFoot, GiLeg, GiBackPain, GiShoulderArmor, GiHandBandage, GiInternalInjury } from 'react-icons/gi';
 import { MdAirlineSeatLegroomExtra } from 'react-icons/md';
 
 export const topics = [
@@ -37,6 +37,10 @@ export const topics = [
   {
     name: 'Hip Flexor Pain',
     icon: <MdAirlineSeatLegroomExtra />,
+  },
+  {
+    name: 'Other Pain',
+    icon: <GiInternalInjury />,
   },
 ];
 
