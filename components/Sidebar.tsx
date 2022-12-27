@@ -12,7 +12,7 @@ import Footer from "./Footer";
 const Sidebar = () => {
     const [showSidebar, setshowSidebar] = useState(true);
 
-    const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#F51997] rounded';
+    const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#10527E] rounded';
 
     const userProfile = false;
 
@@ -33,7 +33,7 @@ const Sidebar = () => {
                                 <AiFillHome />
                             </p> 
                             <span className="text-xl hidden xl:block">
-                                For You
+                                Home
                             </span>                       
                         </div>
                     </Link>

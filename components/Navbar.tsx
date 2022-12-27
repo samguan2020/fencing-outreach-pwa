@@ -7,7 +7,7 @@ import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { BiSearch } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
 
-import Logo from '../utils/tiktik-logo.png';
+import Logo from '../utils/fo-logo.png';
 import { createOrGetUser } from "../utils";
 
 import useAuthStore from "../store/authStore";
@@ -38,7 +38,7 @@ const Navbar = () => {
             <Image 
                 className="cursor-pointer"
                 src={Logo}
-                alt="TikTik"
+                alt="FencingOutreach"
                 layout="responsive"
             />
         </div>
