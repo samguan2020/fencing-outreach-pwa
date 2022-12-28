@@ -15,11 +15,12 @@ const Home = ({ videos }: IProps) => {
 
   return (
      <div className='flex flex-col gap-10 videos h-full'>
+      <p className='text-gray-400 text-md mt-5'>For video submission issue, please email fencingoutreach@gmail.com </p>
       {videos.length ? (
         videos?.map((video: Video) => (
           <VideoCard post={video} key={video._id} />
         )) 
-      ) : (<NoResults text={`No Videos`} />
+      ) : (<NoResults text={`Please help to add more videos, Thanks!`} />
     )}
     <p className='text-gray-400 text-md mt-5'>© 2023 fencingoutreach.org</p>
     </div> 
