@@ -10,7 +10,7 @@ import { IoMdAdd } from "react-icons/io";
 import { useSession, signIn, signOut } from "next-auth/react";
 import type { NextPage } from "next";
 
-import Logo from "../utils/fo-logo.png";
+import Logo from "../utils/fo-logo-3.png";
 import { createOrGetUser } from "../utils";
 
 import useAuthStore from "../store/authStore";
@@ -39,7 +39,7 @@ const Navbar: NextPage = () => {
   return (
     <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-4">
       <Link href="/">
-        <div className="w-[100px] md:w-[130px]">
+        <div className="w-[100px] md:w-[130px] ml-5">
           <Image
             className="cursor-pointer"
             src={Logo}
@@ -92,10 +92,10 @@ const Navbar: NextPage = () => {
                 </>
               </Link>
             )}
-            <button onClick={() => signOut()}>Sign out</button>
+            <button className="border-2 mr-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2" onClick={() => signOut()}>Sign out</button>
           </div>
         ) : (
-          <button onClick={() => signIn()}>Sign in</button>
+          <button className="border-2 mr-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2" onClick={() => signIn()}>Sign in</button>
         )}
       </div>
     </div>
