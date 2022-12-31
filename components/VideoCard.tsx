@@ -92,7 +92,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
           </div>
         </div>
       </div>
-      <p className='xl:px-10 text-lg text-gray-600'>{post.caption}</p>
+      <p className='xl:px-10 text-lg text-gray-600 mr-3'>{post.caption}</p>
       <div className="lg:ml-20 flex gap-4 relative">
         <div
           onMouseEnter={() => setIsHover(true)}
