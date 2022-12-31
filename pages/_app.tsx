@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import { useState, useEffect } from "react";
+import { SessionProvider } from "next-auth/react"
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import Navbar from "../components/Navbar";
@@ -16,8 +17,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   if (isSSR) return null;
 
   return (
-    <GoogleOAuthProvider
-      clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}
+    <SessionProvider
+      // Provider options are not required but can be useful in situations where
+      // you have a short session maxAge time. Shown here with default values.
+      session={pageProps.session}
     >
       <div className="xl:w-[1200px] m-auto overflow-hidden h-[100vh]">
         <Navbar />
@@ -30,7 +33,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           </div>
         </div>
       </div>
-    </GoogleOAuthProvider>
+    </SessionProvider>
   );
 };
 
