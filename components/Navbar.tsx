@@ -7,7 +7,6 @@ import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { BiSearch } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
 
-import { useSession, signIn, signOut } from "next-auth/react";
 import type { NextPage } from "next";
 
 import Logo from "../utils/fo-logo-3.png";
@@ -21,8 +20,6 @@ const Navbar: NextPage = () => {
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
   const { userProfile, addUser, removeUser } = useAuthStore();
-
-  const { data: session } = useSession();
 
   useEffect(() => {
     setUser(userProfile);
@@ -71,7 +68,7 @@ const Navbar: NextPage = () => {
       </div>
 
       <div>
-        {session && session.user ? (
+        {user ? (
           <div className="flex gap-5 md:gap-10">
             <Link href="/upload">
               <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2">
@@ -79,23 +76,35 @@ const Navbar: NextPage = () => {
                 <span className="hidden md:block">Upload </span>
               </button>
             </Link>
-            {session.user.image && (
-              <Link href={"/"}>
-                <>
+            {user.image && (
+              <Link href={`/profile/${user._id}`}>
+                <div>
                   <Image
                     className="rounded-full cursor-pointer"
-                    src={session.user.image}
-                    alt="profile photo"
+                    src={user.image}
+                    alt="user"
                     width={40}
                     height={40}
                   />
-                </>
+                </div>
               </Link>
             )}
-            <button className="border-2 mr-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2" onClick={() => signOut()}>Sign out</button>
+            <button
+              type="button"
+              className=" border-2 p-2 rounded-full cursor-pointer outline-none shadow-md"
+              onClick={() => {
+                googleLogout();
+                removeUser();
+              }}
+            >
+              <AiOutlineLogout color="blue" fontSize={21} />
+            </button>
           </div>
         ) : (
-          <button className="border-2 mr-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2" onClick={() => signIn()}>Sign in</button>
+          <GoogleLogin
+            onSuccess={(response) => createOrGetUser(response, addUser)}
+            onError={() => console.log("Login Failed")}
+          />
         )}
       </div>
     </div>
