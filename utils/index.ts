@@ -18,6 +18,6 @@ export const createOrGetUser = async (response: any, addUser: any) => {
 
   addUser(user);
 
-  await axios.post(`https://fencing-outreach.vercel.app/api/auth`, user);
-  // await axios.post(`https://localhost:3000/api/auth`, user);
+  // await axios.post(`https://fencing-outreach.vercel.app/api/auth`, user);
+  await axios.post(`https://localhost:3000/api/auth`, user);
 };
